@@ -2,7 +2,9 @@ package com.jwetherell.algorithms.data_structures.test;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -21,6 +23,10 @@ public class BTreeTests {
         String bstName = "B-Tree";
         BTree<Integer> bst = new BTree<Integer>(2);
         Collection<Integer> bstCollection = bst.toCollection();
+        List list = new ArrayList<Integer>();
+
+        BTree.JavaCompatibleBTree<Integer> bTree = new BTree.JavaCompatibleBTree<>(bst);
+
 
         assertTrue(TreeTest.testTree(bst, Integer.class, bstName, data.unsorted, data.invalid));
         assertTrue(JavaCollectionTest.testCollection(bstCollection, Integer.class, bstName,
